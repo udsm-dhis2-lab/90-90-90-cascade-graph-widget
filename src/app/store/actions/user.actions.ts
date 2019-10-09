@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
-import { User, ErrorMessage } from '@iapps/ngx-dhis2-http-client';
+import { User } from 'src/app/core/models/user.model';
+import { ErrorMessage } from 'src/app/core/models/error-message.model';
 
 export enum UserActionTypes {
   LoadCurrentUser = '[User] Load current User',

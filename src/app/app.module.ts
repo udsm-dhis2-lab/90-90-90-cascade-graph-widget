@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { NgxDhis2HttpClientModule } from '@iapps/ngx-dhis2-http-client';
+// import { NgxDhis2HttpClientModule } from '@hisptz/ngx-dhis2-http-client';
 import { NgxDhis2MenuModule } from '@iapps/ngx-dhis2-menu';
 import { EffectsModule } from '@ngrx/effects';
 import {
@@ -37,11 +37,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot(effects),
-    NgxDhis2HttpClientModule.forRoot({
-      version: 1,
-      namespace: 'iapps',
-      models: {}
-    }),
+    // NgxDhis2HttpClientModule.forRoot({
+    //   version: 1,
+    //   namespace: 'iapps',
+    //   models: {}
+    // }),
     /**
      * Menu  module
      */

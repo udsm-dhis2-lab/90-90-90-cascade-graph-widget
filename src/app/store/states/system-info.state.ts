@@ -1,5 +1,5 @@
 import { BaseState, initialBaseState } from './base.state';
-import { SystemInfo } from '@iapps/ngx-dhis2-http-client';
+import { SystemInfo } from 'src/app/core/models/system-info.model';
 
 export interface SystemInfoState extends BaseState {
   systemInfo: SystemInfo;
