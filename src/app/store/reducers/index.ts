@@ -7,17 +7,21 @@ import { SystemInfoState } from '../states/system-info.state';
 import { UserState } from '../states/user.state';
 import { systemInfoReducer } from './system-info.reducer';
 import { userReducer } from './user.reducer';
+import { FavoriteState } from '../states/favorite.state';
+import { favoriteReducer } from './chart-favorite.reducer';
 
 export interface State {
   user: UserState;
   systemInfo: SystemInfoState;
   router: RouterReducerState;
+  favorite: FavoriteState;
 }
 
 export const reducers: ActionReducerMap<State> = {
   user: userReducer,
   systemInfo: systemInfoReducer,
-  router: routerReducer
+  router: routerReducer,
+  favorite: favoriteReducer,
 };
 
 export const metaReducers: MetaReducer<State>[] = !environment.production
