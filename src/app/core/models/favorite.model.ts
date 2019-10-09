@@ -1,4 +1,4 @@
-export interface ChartFavorite {
+export interface Favorite {
     lastUpdated: Date;
     id: string;
     href: string;

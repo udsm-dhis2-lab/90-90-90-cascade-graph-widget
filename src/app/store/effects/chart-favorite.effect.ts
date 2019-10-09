@@ -1,42 +1,47 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
-import { FavoriteService } from 'src/app/core/services/favorite/favorite.service';
-import { Observable, of } from 'rxjs';
-import { Action } from '@ngrx/store';
-import { LoadFavoriteAnalytics } from '../actions/analytics.action';
 import {
-    FavoriteActionTypes,
+    Actions,
+    Effect,
+    ofType,
+    OnInitEffects,
+    createEffect,
+} from '@ngrx/effects';
+import { FavoriteService } from 'src/app/core/services/favorite/favorite.service';
+import { of } from 'rxjs';
+import {
     LoadDashboardFavoriteSuccess,
+    LoadDashboardFavorite,
     LoadDashboardFavoriteFail,
 } from '../actions/favorite.actions';
-import { mergeMap, map, catchError } from 'rxjs/operators';
-import { ChartFavorite } from 'src/app/core/models/favorite.model';
+import { map, catchError, switchMap } from 'rxjs/operators';
+import { Favorite } from 'src/app/core/models/favorite.model';
+import { ErrorMessage } from 'src/app/core/models/error-message.model';
 
 @Injectable()
-export class DQADashboardEffects {
-    /**
-       *
-       * @param actions$
-        // tslint:disable-next-line: no-redundant-jsdoc
-       * @param favoriteService
-        // tslint:disable-next-line: no-redundant-jsdoc
-       */
+export class FavoriteEffects implements OnInitEffects {
+
     constructor(
         private actions$: Actions,
         private favoriteService: FavoriteService
     ) { }
 
-    /**
-     * Effect to load 90-90-90 Cascade Favorite
-     */
-    @Effect()
-    loadFavorites$: Observable<any> = this.actions$.pipe(
-        ofType<LoadFavoriteAnalytics>(FavoriteActionTypes.LoadDashboardFavorite),
-        mergeMap((action: LoadFavoriteAnalytics) =>
-            this.favoriteService.getCascadeFavorite().pipe(
-                map((favorite: any) => new LoadDashboardFavoriteSuccess(favorite)),
-                catchError(err => of(new LoadDashboardFavoriteFail(err)))
+    loadFavorites$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(LoadDashboardFavorite),
+            switchMap(action =>
+                this.favoriteService.getCascadeFavorite().pipe(
+                    map((favorite: Favorite) =>
+                        LoadDashboardFavoriteSuccess({ chartFavorite: favorite })
+                    ),
+                    catchError((error: ErrorMessage) =>
+                        of(LoadDashboardFavoriteFail({ error }))
+                    )
+                )
             )
         )
     );
+
+    ngrxOnInitEffects() {
+        return LoadDashboardFavorite();
+    }
 }
