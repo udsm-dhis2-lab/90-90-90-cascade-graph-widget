@@ -22,28 +22,3 @@ export const LoadDashboardFavoriteFail = createAction(
     props<{ error: ErrorMessage }>()
 );
 
-// export enum FavoriteActionsDef {
-//     LoadDashboardFavorite = '[FAVORITE] Load Dashboard Favorites',
-//     LoadDashboardFavoriteSuccess = '[FAVORITE] Load Dashboard Favorite Success',
-//     LoadDashboardFavoriteFail = '[FAVORITE] Load Dashboard Favorite Fail',
-// }
-
-// export class LoadDashboardFavorite implements Action {
-//     readonly type = FavoriteActionsDef.LoadDashboardFavorite;
-//     constructor(public payload: Favorite) { }
-// }
-
-// export class LoadDashboardFavoriteSuccess implements Action {
-//     readonly type = FavoriteActionsDef.LoadDashboardFavoriteSuccess;
-//     constructor(public payload: Favorite) { }
-// }
-
-// export class LoadDashboardFavoriteFail implements Action {
-//     readonly type = FavoriteActionsDef.LoadDashboardFavoriteFail;
-//     constructor(public payload: string) { }
-// }
-
-// export type FavoritesActionTypes =
-//     | LoadDashboardFavorite
-//     | LoadDashboardFavoriteSuccess
-//     | LoadDashboardFavoriteFail;
