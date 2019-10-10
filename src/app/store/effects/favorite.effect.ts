@@ -1,11 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-    Actions,
-    Effect,
-    ofType,
-    OnInitEffects,
-    createEffect,
-} from '@ngrx/effects';
+import { Actions, ofType, OnInitEffects, createEffect } from '@ngrx/effects';
 import { FavoriteService } from 'src/app/core/services/favorite/favorite.service';
 import { of } from 'rxjs';
 import {
@@ -19,7 +13,6 @@ import { ErrorMessage } from 'src/app/core/models/error-message.model';
 
 @Injectable()
 export class FavoriteEffects implements OnInitEffects {
-
     constructor(
         private actions$: Actions,
         private favoriteService: FavoriteService
@@ -28,7 +21,7 @@ export class FavoriteEffects implements OnInitEffects {
     loadFavorites$ = createEffect(() =>
         this.actions$.pipe(
             ofType(LoadDashboardFavorite),
-            switchMap(action =>
+            switchMap(() =>
                 this.favoriteService.getCascadeFavorite().pipe(
                     map((favorite: Favorite) =>
                         LoadDashboardFavoriteSuccess({ chartFavorite: favorite })
