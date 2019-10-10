@@ -1,23 +1,23 @@
-import { createAction, props, Action } from '@ngrx/store';
-import { Analytics } from 'src/app/core/models/analytics.model';
+import { createAction, props } from '@ngrx/store';
+import { ErrorMessage } from 'src/app/core/models/error-message.model';
+import { Extension } from 'src/app/core/models/extension.model';
 
-export enum ExtensionActionTypes {
-    LoadFavoriteExtension = '[DASHBOARD FAVORITES EXTENSION] Load Dashboard Favorites Extensions',
-    LoadFavoriteExtensionSuccess = '[DASHBOARD FAVORITES EXTENSION] Load Dashboard Favorite Extensions Success',
-    LoadFavoriteExtensionFail = '[DASHBOARD FAVORITES EXTENSION] Load Dashboard Favorite Extensions Fail',
+export enum ExtensionActionsDefinition {
+    LoadFavoriteExtension = '[EXTENSIONS] Load Favorites Extension',
+    LoadFavoriteExtensionSuccess = '[EXTENSIONS] Load Favorite Extension Success',
+    LoadFavoriteExtensionFail = '[EXTENSIONS] Load Favorite Extension Fail',
 }
 
-export class LoadFavoriteAnalytics implements Action {
-    readonly type = ExtensionActionTypes.LoadFavoriteExtension;
-    constructor(public payload: Analytics) { }
-}
+export const LoadFavoriteExtension = createAction(
+    ExtensionActionsDefinition.LoadFavoriteExtension
+);
 
-export class LoadFavoriteAnalyticsSuccess implements Action {
-    readonly type = ExtensionActionTypes.LoadFavoriteExtensionSuccess;
-    constructor(public payload: Analytics) { }
-}
+export const LoadFavoriteExtensionSuccess = createAction(
+    ExtensionActionsDefinition.LoadFavoriteExtensionSuccess,
+    props<{ chartExtension: Extension }>()
+);
 
-export class LoadFavoriteAnalyticsFail implements Action {
-    readonly type = ExtensionActionTypes.LoadFavoriteExtensionFail;
-    constructor(public payload: string) { }
-}
+export const LoadFavoriteExtensionFail = createAction(
+    ExtensionActionsDefinition.LoadFavoriteExtensionFail,
+    props<{ error: ErrorMessage }>()
+);
