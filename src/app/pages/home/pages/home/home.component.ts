@@ -1,20 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { Store } from '@ngrx/store';
+import { getListOfFavorites } from 'src/app/store/selectors';
+import { State } from 'src/app/store/reducers';
+import { LoadFavorite } from 'src/app/store/actions/favorite.actions';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(private store: Store<State>) {}
 
-  ngOnInit() {}
-
-  openSnackBar() {
-    this._snackBar.open('This is working', 'OK', {
-      duration: 2000
+  ngOnInit() {
+    this.store.dispatch(LoadFavorite());
+    this.store.select(getListOfFavorites).subscribe(data => {
+      if (data) {
+        console.log('DATA::: ' + JSON.stringify(data));
+      }
     });
   }
 }
