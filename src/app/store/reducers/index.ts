@@ -19,8 +19,8 @@ export interface State {
   systemInfo: SystemInfoState;
   router: RouterReducerState;
   favorite: FavoriteState;
-  extension: ExtensionState;
   analytics: AnalyticsState;
+  extension: ExtensionState;
 }
 
 export const reducers: ActionReducerMap<State> = {
@@ -28,8 +28,8 @@ export const reducers: ActionReducerMap<State> = {
   systemInfo: systemInfoReducer,
   router: routerReducer,
   favorite: favoriteReducer,
+  analytics: analyticsReducer,
   extension: extensionReducer,
-  analytics: analyticsReducer
 };
 
 export const metaReducers: MetaReducer<State>[] = !environment.production

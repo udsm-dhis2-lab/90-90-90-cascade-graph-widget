@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { Actions, ofType, OnInitEffects, createEffect } from '@ngrx/effects';
 import { FavoriteService } from 'src/app/core/services/favorite/favorite.service';
 import { of } from 'rxjs';
-import {
-    LoadDashboardFavoriteSuccess,
-    LoadDashboardFavorite,
-    LoadDashboardFavoriteFail,
-} from '../actions/favorite.actions';
 import { map, catchError, switchMap } from 'rxjs/operators';
 import { Favorite } from 'src/app/core/models/favorite.model';
 import { ErrorMessage } from 'src/app/core/models/error-message.model';
+import {
+    LoadFavorite,
+    LoadFavoriteSuccess,
+    LoadFavoriteFail,
+} from '../actions/favorite.actions';
 
 @Injectable()
 export class FavoriteEffects implements OnInitEffects {
@@ -20,21 +20,19 @@ export class FavoriteEffects implements OnInitEffects {
 
     loadFavorites$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(LoadDashboardFavorite),
+            ofType(LoadFavorite),
             switchMap(() =>
                 this.favoriteService.getCascadeFavorite().pipe(
                     map((favorite: Favorite) =>
-                        LoadDashboardFavoriteSuccess({ chartFavorite: favorite })
+                        LoadFavoriteSuccess({ chartFavorite: favorite })
                     ),
-                    catchError((error: ErrorMessage) =>
-                        of(LoadDashboardFavoriteFail({ error }))
-                    )
+                    catchError((error: ErrorMessage) => of(LoadFavoriteFail({ error })))
                 )
             )
         )
     );
 
     ngrxOnInitEffects() {
-        return LoadDashboardFavorite();
+        return LoadFavorite();
     }
 }

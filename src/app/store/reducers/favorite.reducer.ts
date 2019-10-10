@@ -1,8 +1,3 @@
-import {
-    LoadDashboardFavorite,
-    LoadDashboardFavoriteSuccess,
-    LoadDashboardFavoriteFail,
-} from '../actions/favorite.actions';
 import { initialFavoriteState, FavoriteState } from '../states/favorite.state';
 import { createReducer, on } from '@ngrx/store';
 import {
@@ -10,19 +5,24 @@ import {
     loadedBaseState,
     errorBaseState,
 } from '../states/base.state';
+import {
+    LoadFavorite,
+    LoadFavoriteSuccess,
+    LoadFavoriteFail,
+} from '../actions/favorite.actions';
 
 export const reducer = createReducer(
     initialFavoriteState,
-    on(LoadDashboardFavorite, state => ({
+    on(LoadFavorite, state => ({
         ...state,
         ...loadingBaseState,
     })),
-    on(LoadDashboardFavoriteSuccess, (state, { chartFavorite }) => ({
+    on(LoadFavoriteSuccess, (state, { chartFavorite }) => ({
         ...state,
         ...loadedBaseState,
         chartFavorite,
     })),
-    on(LoadDashboardFavoriteFail, (state, { error }) => ({
+    on(LoadFavoriteFail, (state, { error }) => ({
         ...state,
         ...errorBaseState,
         error,

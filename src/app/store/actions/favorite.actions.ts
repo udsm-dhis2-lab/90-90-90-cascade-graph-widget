@@ -3,22 +3,22 @@ import { Favorite } from 'src/app/core/models/favorite.model';
 import { ErrorMessage } from 'src/app/core/models/error-message.model';
 
 export enum FavoriteActionsDefinition {
-    LoadDashboardFavorite = '[FAVORITE] Load Dashboard Favorites',
-    LoadDashboardFavoriteSuccess = '[FAVORITE] Load Dashboard Favorite Success',
-    LoadDashboardFavoriteFail = '[FAVORITE] Load Dashboard Favorite Fail',
+    LoadFavorite = '[FAVORITE] Load Favorites',
+    LoadFavoriteSuccess = '[FAVORITE] Load Favorite Success',
+    LoadFavoriteFail = '[FAVORITE] Load Favorite Fail',
 }
 
-export const LoadDashboardFavorite = createAction(
-    FavoriteActionsDefinition.LoadDashboardFavorite
+export const LoadFavorite = createAction(
+    FavoriteActionsDefinition.LoadFavorite
 );
 
-export const LoadDashboardFavoriteSuccess = createAction(
-    FavoriteActionsDefinition.LoadDashboardFavoriteSuccess,
+export const LoadFavoriteSuccess = createAction(
+    FavoriteActionsDefinition.LoadFavoriteSuccess,
     props<{ chartFavorite: Favorite }>()
 );
 
-export const LoadDashboardFavoriteFail = createAction(
-    FavoriteActionsDefinition.LoadDashboardFavoriteFail,
+export const LoadFavoriteFail = createAction(
+    FavoriteActionsDefinition.LoadFavoriteFail,
     props<{ error: ErrorMessage }>()
 );
 
