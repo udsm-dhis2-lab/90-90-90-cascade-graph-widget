@@ -1,23 +1,23 @@
-import { createAction, props, Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
+import { ErrorMessage } from 'src/app/core/models/error-message.model';
 import { Analytics } from 'src/app/core/models/analytics.model';
 
-export enum AnalyticsActionTypes {
-    LoadFavoriteAnalytics = '[DASHBOARD FAVORITES ANALYTICS] Load Dashboard Favorites',
-    LoadFavoriteAnalyticsSuccess = '[DASHBOARD FAVORITES ANALYTICS] Load Dashboard Favorite Success',
-    LoadFavoriteAnalyticsFail = '[DASHBOARD FAVORITES ANALYTICS] Load Dashboard Favorite Fail',
+export enum AnalyticsActionsDefinition {
+    LoadFavoriteAnalytics = '[ANALYTICS] Load Favorites Analytics',
+    LoadFavoriteAnalyticsSuccess = '[ANALYTICS] Load Favorite Analytics Success',
+    LoadFavoriteAnalyticsFail = '[ANALYTICS] Load Favorite Analytics Fail',
 }
 
-export class LoadFavoriteAnalytics implements Action {
-    readonly type = AnalyticsActionTypes.LoadFavoriteAnalytics;
-    constructor(public payload: Analytics) { }
-}
+export const LoadFavoriteAnalytics = createAction(
+    AnalyticsActionsDefinition.LoadFavoriteAnalytics
+);
 
-export class LoadFavoriteAnalyticsSuccess implements Action {
-    readonly type = AnalyticsActionTypes.LoadFavoriteAnalyticsSuccess;
-    constructor(public payload: Analytics) { }
-}
+export const LoadFavoriteAnalyticsSuccess = createAction(
+    AnalyticsActionsDefinition.LoadFavoriteAnalyticsSuccess,
+    props<{ chartAnalytics: Analytics }>()
+);
 
-export class LoadFavoriteAnalyticsFail implements Action {
-    readonly type = AnalyticsActionTypes.LoadFavoriteAnalyticsFail;
-    constructor(public payload: string) { }
-}
+export const LoadFavoriteAnalyticsFail = createAction(
+    AnalyticsActionsDefinition.LoadFavoriteAnalyticsFail,
+    props<{ error: ErrorMessage }>()
+);
