@@ -7,11 +7,6 @@ export const getFavoriteSnapshot = createSelector(
     (state: State) => state.favorite
 );
 
-export const getFavorite = createSelector(
-    getFavoriteSnapshot,
-    (favoriteState: FavoriteState) => favoriteState.chartFavorite
-);
-
 export const {
     selectEntities: getFavoriteEntities,
     selectAll: getAllFavorites,
@@ -19,7 +14,7 @@ export const {
     selectTotal: getTotalFavorites,
 } = adapter.getSelectors(getFavoriteSnapshot);
 
-export const getListOfFavorites = createSelector(
+export const getFavorites = createSelector(
     getFavoriteSnapshot,
     (favoriteState: FavoriteState) => favoriteState.chartFavorite
 );

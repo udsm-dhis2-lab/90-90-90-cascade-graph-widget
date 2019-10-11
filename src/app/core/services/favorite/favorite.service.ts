@@ -10,7 +10,7 @@ export class FavoriteService {
   constructor(private httpClient: NgxDhis2HttpClientService) {}
 
   getCascadeFavorite(): Observable<Favorite> {
-    const favoriteURL = `charts/XB4mc3920AY.json?fields=*`;
+    const favoriteURL = `charts/XB4mc3920AY.json?fields=*,dataDimensionItems[dataDimensionItemType[*],indicator[id, name,dimensionItemType,description,totalAggregationType]`;
     return this.httpClient.get(favoriteURL);
   }
 }
