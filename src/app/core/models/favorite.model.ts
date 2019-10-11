@@ -1,7 +1,6 @@
 export interface Favorite {
     lastUpdated: Date;
     id: string;
-    href: string;
     created: Date;
     name: string;
     showData: boolean;
@@ -59,7 +58,6 @@ export interface Favorite {
     filters: Filter[];
     rows: Row[];
 }
-
 export interface ParentGraphMap {
     m0frOspS7JY: string;
 }
@@ -124,7 +122,10 @@ export interface User {
 }
 
 export interface Indicator {
+    name: string;
     id: string;
+    dimensionItemType: string;
+    description: string;
 }
 
 export interface DataDimensionItem {
