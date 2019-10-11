@@ -14,7 +14,7 @@ export const {
     selectTotal: getTotalExtension,
 } = adapter.getSelectors(getExtensionSnapshot);
 
-export const getListOfExtension = createSelector(
+export const getExtension = createSelector(
     getExtensionSnapshot,
     (extensionState: ExtensionState) => extensionState.chartExtension
 );
