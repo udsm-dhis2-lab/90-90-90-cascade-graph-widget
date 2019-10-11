@@ -28,7 +28,7 @@
     "@angular/router": "^8.0.1",
     "@angular/service-worker": "^8.0.1",
     "@hisptz/ngx-dhis2-http-client": "^2.0.2",
-    "@iapps/ngx-dhis2-menu": "^1.0.9",
+    "@iapps/ngx-dhis2-menu": "^1.0.10",
     "@ngrx/effects": "^8.0.1",
     "@ngrx/entity": "^8.4.0",
     "@ngrx/router-store": "^8.0.1",
