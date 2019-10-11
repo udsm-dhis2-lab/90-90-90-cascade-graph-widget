@@ -13,7 +13,7 @@ export class AnalyticsService {
     const data = `xXrwhpYL4UD;itIVeB2QV3B;Zq7AbV0d2SS;BHUTFEEteC8`;
     const period = `LAST_QUARTER`;
     const orgUnit = `m0frOspS7JY`;
-    const urlMetadata = `displayProperty=NAME&skipMeta=false&includeNumDen=true`;
+    const urlMetadata = `displayProperty=NAME&skipMeta=false&includeNumDen=false`;
     const analyticsURL = `analytics?dimension=dx:${data}&dimension=pe:${period}&filter=ou:${orgUnit}&${urlMetadata}`;
     return this.httpClient.get(analyticsURL);
   }
