@@ -1,4 +1,4 @@
 <div class="chart-item-container">
-    <app-visualization-card-loader *ngIf="favoriteLoaded$ | async" [message]='progressMSG' [height]='chartHeight'></app-visualization-card-loader>
+    <app-visualization-card-loader *ngIf="favoriteLoading$ | async" [message]='progressMSG' [height]='chartHeight'></app-visualization-card-loader>
     <div *ngIf="favoriteLoaded$ | async" id="{{ renderId }}" class="chart-block" [style.height]="'calc(' + chartHeight + ' - 20px)'"></div>
 </div>
