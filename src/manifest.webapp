@@ -1,8 +1,8 @@
 
 {
-    "version": "1.0.0-alpha.1",
-    "name": "Seed App",
-    "description": "Seed App",
+    "version": "1.0.0",
+    "name": "Cascade Widget",
+    "description": "Cascade Widget",
     "appType": "APP",
     "launch_path": "index.html",
     "icons": {

@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
 
   cascadeChartOptions: any;
 
-  constructor(private store: Store<State>) { }
+  constructor(private store: Store<State>) {}
 
   ngOnInit() {
     this.store.dispatch(LoadFavorite());
@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
     this.favorite$.subscribe((favorite: Favorite) => {
       if (favorite) {
         this.renderId = favorite.id;
-        
+
         const visualizationLayout: VisualizationLayout = getVisualizationLayout();
         const visualizationConfiguration: ChartConfiguration = getChartConfiguration(
           favorite,
