@@ -72,7 +72,6 @@ export class HomeComponent implements OnInit {
     this.favorite$.subscribe((favorite: Favorite) => {
       if (favorite) {
         this.renderId = favorite.id;
-
         const visualizationLayout: VisualizationLayout = getVisualizationLayout();
         const visualizationConfiguration: ChartConfiguration = getChartConfiguration(
           favorite,
