@@ -6,6 +6,11 @@
   flex-direction: column;
 }
 
+.error-component {
+  margin: auto;;
+  text-align: center;
+}
+
 .example-container > * {
   width: 100%;
 }
