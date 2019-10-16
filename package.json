@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --aot && cd dist/90-90-90-cascade-graph-widget && zip -r -D 90-90-90-cascade-graph-widget.zip .",
+    "build:circleci": "ng build --prod --aot",
     "test": "ng test",
     "test:travis": "ng test -- --no-watch --no-progress --code-coverage --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
