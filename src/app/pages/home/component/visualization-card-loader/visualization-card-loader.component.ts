@@ -1,13 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as _ from 'lodash';
-import { Store } from '@ngrx/store';
-import { State } from 'src/app/store/reducers';
-import { Observable } from 'rxjs';
-import {
-  getAnalyticsLoading,
-  getFavoriteLoading,
-  getExtensionLoading,
-} from 'src/app/store/selectors';
 
 @Component({
   selector: 'app-visualization-card-loader',
