@@ -1,8 +1,11 @@
 # Highcharts 90-90-90 Cascade Graph Widget
-### 90-90-90 HIV Prevention, Engagement and Care Cascade Graph(i.e Treatment target graph to help end the AIDS epidemic)
+### 90-90-90 HIV Prevention, Engagement and Care Cascade Widget(i.e Treatment target graph to help end the AIDS epidemic)
 
+[![CircleCI](https://circleci.com/gh/hisptz/90-90-90-cascade-graph-widget.svg?style=svg)](https://circleci.com/gh/hisptz/90-90-90-cascade-graph-widget)
 [![Greenkeeper badge](https://badges.greenkeeper.io/hisptz/90-90-90-cascade-graph-widget.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/hisptz/90-90-90-cascade-graph-widget.svg?branch=master)](https://travis-ci.org/hisptz/90-90-90-cascade-graph-widget)
+[![Maintainability](https://api.codeclimate.com/v1/badges/3bb582ac0d6c1de683d5/maintainability)](https://codeclimate.com/github/hisptz/90-90-90-cascade-graph-widget/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/3bb582ac0d6c1de683d5/test_coverage)](https://codeclimate.com/github/hisptz/90-90-90-cascade-graph-widget/test_coverage)
 
 
 ## Introduction
@@ -28,7 +31,7 @@ Powerful momentum is now building towards a new narrative on HIV treatment and a
 Development Team from [UDSM](http://www.udsm.ac.tz) develop and maintain this widget to ensure visual and usability consistency of the in all system where will it be installed.
 
 ## Widget Usage
-You can go to the [DHIS2]() where the widget is installed and add it as dashboard item to support HIV Cascade.
+You can go to the [DHIS2](https://www.dhis2.org/) where the widget is installed and add it as dashboard item to support HIV Cascade.
 
 ## Contribution
 [![](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/images/0)](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/links/0)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/images/1)](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/links/1)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/images/2)](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/links/2)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/images/3)](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/links/3)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/images/4)](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/links/4)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/images/5)](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/links/5)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/images/6)](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/links/6)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/images/7)](https://sourcerer.io/fame/waltervfaustine/hisptz/90-90-90-cascade-graph-widget/links/7)
