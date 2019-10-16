@@ -1,8 +1,8 @@
 
 {
     "version": "1.0.0",
-    "name": "Cascade Widget",
-    "description": "Cascade Widget",
+    "name": "Cascade Analysis to Quantify Progress and Gaps towards HIV Targets",
+    "description": "Cascade Analysis to Quantify Progress and Gaps towards HIV Targets",
     "appType": "DASHBOARD_WIDGET",
     "launch_path": "index.html",
     "icons": {
