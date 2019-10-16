@@ -76,10 +76,6 @@ export class HomeComponent implements OnInit {
     this.progressMSG =
       'Cascade Analysis to Quantify Progress and Gaps towards the 90-90-90 Targets';
 
-    this.hasError$.subscribe((hasError => console.log('HAS ERROR::: ', hasError)));
-    this.error$.subscribe((err => console.log('HAS ERROR::: ', err)));
-
-
     this.favorite$.subscribe((favorite: Favorite) => {
       if (favorite) {
         this.renderId = favorite.id;
