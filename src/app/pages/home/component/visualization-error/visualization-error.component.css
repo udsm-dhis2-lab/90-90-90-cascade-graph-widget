@@ -1,0 +1,23 @@
+body {
+  margin: auto;
+  text-align: center;
+}
+
+.error-div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.warning-icon {
+  margin: auto;
+  text-align: center;
+  height: 70px;
+}
+
+.error-message {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}

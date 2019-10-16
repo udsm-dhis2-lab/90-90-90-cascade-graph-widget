@@ -10,6 +10,8 @@ import {
   getFavoriteLoading,
   getAnalyticsLoading,
   getExtensionLoading,
+  getFavoriteHasError,
+  getFavoriteError,
 } from 'src/app/store/selectors';
 import { State } from 'src/app/store/reducers';
 import { LoadFavorite } from 'src/app/store/actions/favorite.actions';
@@ -29,7 +31,8 @@ import {
 } from 'src/app/core/helpers/sanitize-analytics';
 import { GenerateCascadeGraph } from '@iapps/visualization/cascade';
 import { extendOtherChartOptions } from 'src/app/core/helpers/draw-chart.helper';
-import { chart } from 'highcharts';
+import * as Highcharts from 'highcharts';
+import { ErrorMessage } from 'src/app/core/models/error-message.model';
 
 @Component({
   selector: 'app-home',
@@ -48,6 +51,8 @@ export class HomeComponent implements OnInit {
   favoriteLoading$: Observable<boolean>;
   analyticsLoading$: Observable<boolean>;
   extensionLoading$: Observable<boolean>;
+  hasError$: Observable<boolean>;
+  error$: Observable<ErrorMessage>;
   progressMSG: string;
 
   cascadeChartOptions: any;
@@ -65,9 +70,15 @@ export class HomeComponent implements OnInit {
     this.favoriteLoading$ = this.store.select(getFavoriteLoading);
     this.analyticsLoading$ = this.store.select(getAnalyticsLoading);
     this.extensionLoading$ = this.store.select(getExtensionLoading);
-    this.chartHeight = '520px';
+    this.hasError$ = this.store.select(getFavoriteHasError);
+    this.error$ = this.store.select(getFavoriteError);
+    this.chartHeight = '460px';
     this.progressMSG =
       'Cascade Analysis to Quantify Progress and Gaps towards the 90-90-90 Targets';
+
+    this.hasError$.subscribe((hasError => console.log('HAS ERROR::: ', hasError)));
+    this.error$.subscribe((err => console.log('HAS ERROR::: ', err)));
+
 
     this.favorite$.subscribe((favorite: Favorite) => {
       if (favorite) {
@@ -113,7 +124,12 @@ export class HomeComponent implements OnInit {
                   cascadeExtension,
                   chartObject
                 );
-                chart(this.renderId, this.cascadeChartOptions);
+
+                if (this.cascadeChartOptions) {
+                  setTimeout(() => {
+                    Highcharts.chart(this.renderId, this.cascadeChartOptions);
+                  }, 20);
+                }
               }
             });
           }
