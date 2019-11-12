@@ -32,7 +32,7 @@
     "@iapps/ngx-dhis2-menu": "^1.0.9",
     "@iapps/visualization": "^1.0.4",
     "@ngrx/effects": "^8.0.1",
-    "@ngrx/entity": "^8.5.0",
+    "@ngrx/entity": "^8.5.1",
     "@ngrx/router-store": "^8.0.1",
     "@ngrx/store": "^8.0.1",
     "@ngrx/store-devtools": "^8.0.1",
